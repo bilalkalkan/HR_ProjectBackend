@@ -139,7 +139,7 @@ namespace WebAPI.Controllers
         }
 
 
-        [HttpGet("updateallowancetype")]
+        [HttpPost("updateallowancetype")]
         public IActionResult UpdateAllowanceType(AllowanceType allowanceType)
         {
             var result = _allowanceTypeService.Update(allowanceType);

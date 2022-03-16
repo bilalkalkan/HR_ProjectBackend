@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
@@ -49,18 +50,21 @@ namespace Business.Concrete
                 .GetUserOperationClaimDetails());
         }
 
+        [SecuredOperation("admin")]
         public IResult Add(UserOperationClaim userOperationClaim)
         {
             _userOperationClaimDal.Add(userOperationClaim);
             return new SuccessResult(Messages.UserOperationClaimAddedd);
         }
 
+        [SecuredOperation("admin")]
         public IResult Delete(UserOperationClaim userOperationClaim)
         {
             _userOperationClaimDal.Delete(userOperationClaim);
             return new SuccessResult(Messages.UserOperationClaimDeleted);
         }
 
+        [SecuredOperation("admin")]
         public IResult Update(UserOperationClaim userOperationClaim)
         {
             _userOperationClaimDal.Update(userOperationClaim);

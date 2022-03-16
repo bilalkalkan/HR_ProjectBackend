@@ -10,6 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IUserOperationClaimDal:IEntityRepository<UserOperationClaim>
     {
-        List<UserOperationClaimDetailDto> GetUserOperationClaimDetails(Expression<Func<UserOperationClaimDetailDto, bool>> filter = null);
+       List<UserOperationClaimDetailDto> GetUserOperationClaimDetails(Expression<Func<UserOperationClaimDetailDto, bool>> filter = null);
     }
 }

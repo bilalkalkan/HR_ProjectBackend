@@ -55,6 +55,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.OperationClaimDeleted);
         }
 
+        [SecuredOperation("admin")]
         public IResult Update(OperationClaim claim)
         {
             _operationClaimDal.Update(claim);

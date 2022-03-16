@@ -10,6 +10,7 @@ namespace Business.Abstract
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetByUserId(int userId);
         IDataResult<List<OperationClaim>> GetClaims(User user);
+        IDataResult<List<UserOperationClaimDetailDto>> GetUserDetail();
         IResult Add(User user);
         IResult Delete(User user);
         IResult Update(UserForUpdateDTo userForUpdate);
