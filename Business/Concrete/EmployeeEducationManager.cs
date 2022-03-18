@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -27,6 +28,7 @@ namespace Business.Concrete
             return new SuccessDataResult<EmployeeEducation>(_employeeEducationDal.Get(e => e.Id == id));
         }
 
+        [SecuredOperation("user")]
         public IResult Add(EmployeeEducation employeeEducation)
         {
             IResult result = BusinessRules.Run(CheckDate(employeeEducation));
@@ -38,6 +40,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.EmployeeEducationAdded);
         }
 
+        [SecuredOperation("user")]
         public IResult Update(EmployeeEducation employeeEducation)
         {
 
@@ -50,6 +53,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.EmployeeEducationUpdated);
         }
 
+        [SecuredOperation("user")]
         public IResult Delete(EmployeeEducation employeeEducation)
         {
          

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -28,6 +29,7 @@ namespace Business.Concrete
             return new SuccessDataResult<EmployeeDebit>(_employeeDebitDal.Get(e => e.Id == id));
         }
 
+        [SecuredOperation("user")]
         public IResult Add(EmployeeDebit employeeDebit)
         {
             IResult result = BusinessRules.Run(DateControl(employeeDebit));
@@ -39,12 +41,14 @@ namespace Business.Concrete
             return new SuccessResult(Messages.EmployeeDebitAdded);
         }
 
+        [SecuredOperation("user")]
         public IResult Delete(EmployeeDebit employeeDebit)
         {
             _employeeDebitDal.Delete(employeeDebit);
             return new SuccessResult(Messages.EmployeeDebitDeleted);
         }
 
+        [SecuredOperation("user")]
         public IResult Update(EmployeeDebit employeeDebit)
         {
 
