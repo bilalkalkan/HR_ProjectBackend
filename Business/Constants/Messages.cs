@@ -55,5 +55,6 @@ namespace Business.Constants
         public static string UserOperationClaimUpdated = "Kullanıcı işlem talebi güncellendi";
 
 
+        public static string EmployeeDebitNotDeleted = "Çalışan zimmeti silinemedi";
     }
 }

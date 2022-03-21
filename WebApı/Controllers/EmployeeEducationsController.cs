@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _employeeEducationService.GetAll();
+            var result = _employeeEducationService.GetEmployeeEducations();
             if (result.Success)
             {
                 return Ok(result);
@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _employeeEducationService.Get(id);
+            var result = _employeeEducationService.GetEmployeeEducation(id);
             if (result.Success)
             {
                 return Ok(result);

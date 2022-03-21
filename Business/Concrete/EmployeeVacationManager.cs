@@ -19,12 +19,12 @@ namespace Business.Concrete
             _employeeVacationDal = employeeVacationDal;
         }
 
-        public IDataResult<List<EmployeeVacation>> GetAll()
+        public IDataResult<List<EmployeeVacation>> GetEmployeeVacations()
         {
             return new SuccessDataResult<List<EmployeeVacation>>(_employeeVacationDal.GetAll());
         }
 
-        public IDataResult<EmployeeVacation> Get(int id)
+        public IDataResult<EmployeeVacation> GetEmployeeVacation(int id)
         {
             return new SuccessDataResult<EmployeeVacation>(_employeeVacationDal.Get(e => e.Id == id));
         }

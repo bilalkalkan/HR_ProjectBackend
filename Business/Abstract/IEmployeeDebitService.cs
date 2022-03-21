@@ -6,8 +6,8 @@ namespace Business.Abstract
 {
     public interface IEmployeeDebitService
     {
-        IDataResult<List<EmployeeDebit>> GetAll();
-        IDataResult<EmployeeDebit> Get(int id);
+        IDataResult<List<EmployeeDebit>> GetEmployeeDebits();
+        IDataResult<EmployeeDebit> GetEmployeeDebit(int id);
         IResult Add(EmployeeDebit employeeDebit);
         IResult Delete(EmployeeDebit employeeDebit);
         IResult Update(EmployeeDebit employeeDebit);

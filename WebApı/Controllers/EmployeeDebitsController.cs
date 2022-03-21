@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _employeeDebitService.GetAll();
+            var result = _employeeDebitService.GetEmployeeDebits();
             if (result.Success)
             {
                 return Ok(result);
@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _employeeDebitService.Get(id);
+            var result = _employeeDebitService.GetEmployeeDebit(id);
             if (result.Success)
             {
                 return Ok(result);

@@ -18,12 +18,12 @@ namespace Business.Concrete
             _employeeEducationDal = employeeEducationDal;
         }
 
-        public IDataResult<List<EmployeeEducation>> GetAll()
+        public IDataResult<List<EmployeeEducation>> GetEmployeeEducations()
         {
             return new SuccessDataResult<List<EmployeeEducation>>(_employeeEducationDal.GetAll());
         }
 
-        public IDataResult<EmployeeEducation> Get(int id)
+        public IDataResult<EmployeeEducation> GetEmployeeEducation(int id)
         {
             return new SuccessDataResult<EmployeeEducation>(_employeeEducationDal.Get(e => e.Id == id));
         }

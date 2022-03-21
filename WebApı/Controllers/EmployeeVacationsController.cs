@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _employeeVacationService.GetAll();
+            var result = _employeeVacationService.GetEmployeeVacations();
             if (result.Success)
             {
                 return Ok(result);
@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _employeeVacationService.Get(id);
+            var result = _employeeVacationService.GetEmployeeVacation(id);
             if (result.Success)
             {
                 return Ok(result);

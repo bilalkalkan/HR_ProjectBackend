@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _employeeLanguageService.GetAll();
+            var result = _employeeLanguageService.GetEmployeeLanguages();
             if (result.Success)
             {
                 return Ok(result);
@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _employeeLanguageService.Get(id);
+            var result = _employeeLanguageService.GetEmployeeLanguage(id);
             if (result.Success)
             {
                 return Ok(result);

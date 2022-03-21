@@ -6,8 +6,8 @@ namespace Business.Abstract
 {
     public interface IEmployeeVacationService
     {
-        IDataResult<List<EmployeeVacation>> GetAll();
-        IDataResult<EmployeeVacation> Get(int id);
+        IDataResult<List<EmployeeVacation>> GetEmployeeVacations();
+        IDataResult<EmployeeVacation> GetEmployeeVacation(int id);
         IResult Add(EmployeeVacation employeeVacation);
         IResult Delete(EmployeeVacation employeeVacation);
         IResult Update(EmployeeVacation employeeVacation);

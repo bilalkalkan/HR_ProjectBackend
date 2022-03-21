@@ -19,12 +19,12 @@ namespace Business.Concrete
             _employeeDebitDal = employeeDebitDal;
         }
 
-        public IDataResult<List<EmployeeDebit>> GetAll()
+        public IDataResult<List<EmployeeDebit>> GetEmployeeDebits()
         {
             return new SuccessDataResult<List<EmployeeDebit>>(_employeeDebitDal.GetAll());
         }
 
-        public IDataResult<EmployeeDebit> Get(int id)
+        public IDataResult<EmployeeDebit> GetEmployeeDebit(int id)
         {
             return new SuccessDataResult<EmployeeDebit>(_employeeDebitDal.Get(e => e.Id == id));
         }
@@ -44,6 +44,7 @@ namespace Business.Concrete
         [SecuredOperation("user")]
         public IResult Delete(EmployeeDebit employeeDebit)
         {
+           
             _employeeDebitDal.Delete(employeeDebit);
             return new SuccessResult(Messages.EmployeeDebitDeleted);
         }

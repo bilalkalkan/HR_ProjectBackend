@@ -10,19 +10,19 @@ namespace Business.Concrete
 {
     public class EmployeeLanguageManager : IEmployeeLanguageService
     {
-        private IEmployeeLanguageDal _employeeLanguageDal;
+        private readonly IEmployeeLanguageDal _employeeLanguageDal;
 
         public EmployeeLanguageManager(IEmployeeLanguageDal employeeLanguageDal)
         {
             _employeeLanguageDal = employeeLanguageDal;
         }
 
-        public IDataResult<List<EmployeeLanguage>> GetAll()
+        public IDataResult<List<EmployeeLanguage>> GetEmployeeLanguages()
         {
             return new SuccessDataResult<List<EmployeeLanguage>>(_employeeLanguageDal.GetAll());
         }
 
-        public IDataResult<EmployeeLanguage> Get(int id)
+        public IDataResult<EmployeeLanguage> GetEmployeeLanguage(int id)
         {
             return new SuccessDataResult<EmployeeLanguage>(_employeeLanguageDal.Get(e => e.Id == id));
         }

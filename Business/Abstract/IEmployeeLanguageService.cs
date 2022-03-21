@@ -6,8 +6,8 @@ namespace Business.Abstract
 {
     public interface IEmployeeLanguageService
     {
-        IDataResult<List<EmployeeLanguage>> GetAll();
-        IDataResult<EmployeeLanguage> Get(int id);
+        IDataResult<List<EmployeeLanguage>> GetEmployeeLanguages();
+        IDataResult<EmployeeLanguage> GetEmployeeLanguage(int id);
         IResult Add(EmployeeLanguage employeeLanguage);
         IResult Delete(EmployeeLanguage employeeLanguage);
         IResult Update(EmployeeLanguage employeeLanguage);
