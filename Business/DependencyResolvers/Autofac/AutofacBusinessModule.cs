@@ -15,7 +15,7 @@ using Core.Utilities.Security.JWT;
 
 namespace Business.DependencyResolvers.Autofac
 {
-    public class AutofacBusinessModule:Module
+    public class AutofacBusinessModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
@@ -39,6 +39,10 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<EmployeeVacationManager>().As<IEmployeeVacationService>().SingleInstance();
             builder.RegisterType<EfEmployeeVacationDal>().As<IEmployeeVacationDal>().SingleInstance();
+
+
+            builder.RegisterType<EmployeeComputerInformationManager>().As<IEmployeeComputerInformationService>().SingleInstance();
+            builder.RegisterType<EfEmployeeComputerInformationDal>().As<IEmployeeComputerInformationDal>().SingleInstance();
 
 
             builder.RegisterType<AllowanceTypeManager>().As<IAllowanceTypeService>().SingleInstance();

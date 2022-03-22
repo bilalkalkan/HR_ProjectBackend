@@ -56,5 +56,10 @@ namespace Business.Constants
 
 
         public static string EmployeeDebitNotDeleted = "Çalışan zimmeti silinemedi";
+        public static string EmployeeComputerInformationAdded = "Çalışanın Bilgisayar bilgileri eklendi";
+        public static string EmployeeComputerInformationDeleted = "Çalışanın Bilgisayar bilgileri silindi";
+        public static string EmployeeComputerInformationUpdated = "Çalışanın Bilgisayar bilgileri güncellendi";
+
+
     }
 }
