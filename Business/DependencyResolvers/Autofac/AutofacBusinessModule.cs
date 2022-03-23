@@ -12,6 +12,7 @@ using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using Core.Utilities.Security.JWT;
+using Entities.Concrete;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -44,6 +45,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EmployeeComputerInformationManager>().As<IEmployeeComputerInformationService>().SingleInstance();
             builder.RegisterType<EfEmployeeComputerInformationDal>().As<IEmployeeComputerInformationDal>().SingleInstance();
 
+
+            builder.RegisterType<EmployeeEmergencyInformationManager>().As<IEmployeeEmergencyInformationService>().SingleInstance();
+            builder.RegisterType<EfEmployeeEmergencyInformationDal>().As<IEmployeeEmergencyInformationDal>().SingleInstance();
 
             builder.RegisterType<AllowanceTypeManager>().As<IAllowanceTypeService>().SingleInstance();
             builder.RegisterType<EfAllowanceTypeDal>().As<IAllowanceTypeDal>().SingleInstance();

@@ -61,5 +61,10 @@ namespace Business.Constants
         public static string EmployeeComputerInformationUpdated = "Çalışanın Bilgisayar bilgileri güncellendi";
 
 
+        public static string EmployeeEmergencyInformationAdded = "Çalışanın acil durum bilgileri eklendi";
+        public static string EmployeeEmergencyInformationDeleted = "Çalışanın acil durum bilgileri silindi";
+        public static string EmployeeEmergencyInformationUpdated = "Çalışanın acil durum bilgileri eklendi";
+
+
     }
 }
