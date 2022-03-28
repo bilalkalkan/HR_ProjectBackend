@@ -20,7 +20,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<EmployeeComputerInformation> EmployeeComputerInformations { get; set; }
         public DbSet<EmployeeEmergencyInformation> EmployeeEmergencyInformations { get; set; }
         public DbSet<EmployeeContactInformation> EmployeeContactInformations { get; set; }
-        public DbSet<EmployeePastWorkExperience> EmployeePastWorkExperience { get; set; }
+        public DbSet<EmployeePastWorkExperience> EmployeePastWorkExperiences { get; set; }
         public DbSet<EducationaLevel> EducationaLevels { get; set; }
         public DbSet<FamilyMember> FamilyMembers { get; set; }
         public DbSet<Language> Languages { get; set; }

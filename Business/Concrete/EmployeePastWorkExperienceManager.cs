@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Business;
 using Core.Utilities.Results;
@@ -30,6 +31,7 @@ namespace Business.Concrete
                 _employeePastWorkExperienceDal.Get(e => e.Id == id));
         }
 
+        [SecuredOperation("user")]
         public IResult Add(EmployeePastWorkExperience employeePastWorkExperience)
         {
             IResult result = BusinessRules.Run(DateControl(employeePastWorkExperience));
@@ -41,6 +43,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.EmployeePastWorkExperienceAdded);
         }
 
+        [SecuredOperation("user")]
         public IResult Delete(EmployeePastWorkExperience employeePastWorkExperience)
         {
             _employeePastWorkExperienceDal.Delete(employeePastWorkExperience);
@@ -48,6 +51,7 @@ namespace Business.Concrete
 
         }
 
+        [SecuredOperation("user")]
         public IResult Update(EmployeePastWorkExperience employeePastWorkExperience)
         {
             _employeePastWorkExperienceDal.Update(employeePastWorkExperience);
