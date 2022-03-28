@@ -66,5 +66,13 @@ namespace Business.Constants
         public static string EmployeeEmergencyInformationUpdated = "Çalışanın acil durum bilgileri eklendi";
 
 
+        public static string EmployeeContactInformationAdded = "Çalışanın İletişim bilgileri eklendi";
+        public static string EmployeeContactInformationDeleted = "Çalışanın İletişim bilgileri silindi";
+        public static string EmployeeContactInformationUpdated = "Çalışanın İletişim bilgileri güncellendi";
+
+        public static string EmployeePastWorkExperienceAdded = "Çalışanın Geçmiş iş Tecrübeleri eklendi";
+        public static string EmployeePastWorkExperienceDeleted = "Çalışanın Geçmiş iş Tecrübeleri silindi";
+        public static string EmployeePastWorkExperienceUpdated = "Çalışanın Geçmiş iş Tecrübeleri güncellendi";
+
     }
 }

@@ -19,12 +19,16 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<EmployeeVacation> EmployeeVacations { get; set; }
         public DbSet<EmployeeComputerInformation> EmployeeComputerInformations { get; set; }
         public DbSet<EmployeeEmergencyInformation> EmployeeEmergencyInformations { get; set; }
+        public DbSet<EmployeeContactInformation> EmployeeContactInformations { get; set; }
+        public DbSet<EmployeePastWorkExperience> EmployeePastWorkExperience { get; set; }
         public DbSet<EducationaLevel> EducationaLevels { get; set; }
         public DbSet<FamilyMember> FamilyMembers { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Nationality> Nationalities { get; set; }
         public DbSet<DebitType> DebitTypes { get; set; }
         public DbSet<AllowanceType> AllowanceTypes { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<County> Counties { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }

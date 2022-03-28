@@ -4,15 +4,11 @@ using Business.Concrete;
 using Business.Concrete.Items;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using Core.Utilities.Security.JWT;
-using Entities.Concrete;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -49,6 +45,12 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EmployeeEmergencyInformationManager>().As<IEmployeeEmergencyInformationService>().SingleInstance();
             builder.RegisterType<EfEmployeeEmergencyInformationDal>().As<IEmployeeEmergencyInformationDal>().SingleInstance();
 
+            builder.RegisterType<EmployeeContactInformationManager>().As<IEmployeeContactInformationService>().SingleInstance();
+            builder.RegisterType<EfEmployeeContactInformationDal>().As<IEmployeeContactInformationDal>().SingleInstance();
+
+            builder.RegisterType<EmployeePastWorkExperienceManager>().As<IEmployeePastWorkExperienceService>().SingleInstance();
+            builder.RegisterType<EfEmployeePastWorkExperienceDal>().As<IEmployeePastWorkExperienceDal>().SingleInstance();
+
             builder.RegisterType<AllowanceTypeManager>().As<IAllowanceTypeService>().SingleInstance();
             builder.RegisterType<EfAllowanceTypeDal>().As<IAllowanceTypeDal>().SingleInstance();
 
@@ -56,6 +58,12 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<DebitTypeManager>().As<IDebitTypeService>().SingleInstance();
             builder.RegisterType<EfDebitTypeDal>().As<IDebitTypeDal>().SingleInstance();
 
+
+            builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
+            builder.RegisterType<EfCityDal>().As<ICityDal>().SingleInstance();
+
+            builder.RegisterType<CountyManager>().As<ICountyService>().SingleInstance();
+            builder.RegisterType<EfCountyDal>().As<ICountyDal>().SingleInstance();
 
             builder.RegisterType<EducationaLevelManager>().As<IEducationaLevelService>().SingleInstance();
             builder.RegisterType<EfEducationaLevelDal>().As<IEducationaLevelDal>().SingleInstance();
