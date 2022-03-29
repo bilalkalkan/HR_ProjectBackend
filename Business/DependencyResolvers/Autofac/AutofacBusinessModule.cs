@@ -51,6 +51,10 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EmployeePastWorkExperienceManager>().As<IEmployeePastWorkExperienceService>().SingleInstance();
             builder.RegisterType<EfEmployeePastWorkExperienceDal>().As<IEmployeePastWorkExperienceDal>().SingleInstance();
 
+
+            builder.RegisterType<EmployeeAwardInformationManager>().As<IEmployeeAwardInformationService>().SingleInstance();
+            builder.RegisterType<EfEmployeeAwardInformationDal>().As<IEmployeeAwardInformationDal>().SingleInstance();
+
             builder.RegisterType<AllowanceTypeManager>().As<IAllowanceTypeService>().SingleInstance();
             builder.RegisterType<EfAllowanceTypeDal>().As<IAllowanceTypeDal>().SingleInstance();
 

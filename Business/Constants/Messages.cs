@@ -74,5 +74,9 @@ namespace Business.Constants
         public static string EmployeePastWorkExperienceDeleted = "Çalışanın Geçmiş iş Tecrübeleri silindi";
         public static string EmployeePastWorkExperienceUpdated = "Çalışanın Geçmiş iş Tecrübeleri güncellendi";
 
+        public static string EmployeeAwardInformationAdded = "Çalışanın ödül bilgileri eklendi";
+        public static string EmployeeAwardInformationDeleted = "Çalışanın ödül bilgileri silindi";
+        public static string EmployeeAwardInformationUpdated = "Çalışanın ödül bilgileri güncellendi";
+
     }
 }
