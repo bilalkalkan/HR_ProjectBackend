@@ -5,6 +5,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -17,9 +18,9 @@ namespace Business.Concrete
             _employeeLanguageDal = employeeLanguageDal;
         }
 
-        public IDataResult<List<EmployeeLanguage>> GetEmployeeLanguages()
+        public IDataResult<List<EmployeeLanguageDto>> GetEmployeeLanguages()
         {
-            return new SuccessDataResult<List<EmployeeLanguage>>(_employeeLanguageDal.GetAll());
+            return new SuccessDataResult<List<EmployeeLanguageDto>>(_employeeLanguageDal.GetEmployeeLanguagelist());
         }
 
         public IDataResult<EmployeeLanguage> GetEmployeeLanguage(int id)

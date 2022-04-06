@@ -11,6 +11,5 @@ namespace DataAccess.Abstract
 {
     public interface ICountyDal:IEntityRepository<County>
     {
-        List<CountyDto> GetCounties(Expression<Func<CountyDto, bool>> filter = null);
     }
 }

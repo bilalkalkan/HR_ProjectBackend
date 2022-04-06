@@ -5,6 +5,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -19,10 +20,14 @@ namespace Business.Concrete
             _employeeFamilyDal = employeeFamilyDal;
         }
 
-        
-        public IDataResult<List<EmployeeFamily>> GetEmployeeFamilies()
+        public IDataResult<List<EmployeeFamily>> GetAll()
         {
             return new SuccessDataResult<List<EmployeeFamily>>(_employeeFamilyDal.GetAll());
+        }
+
+        public IDataResult<List<EmployeeFamilyDto>> GetEmployeeFamilies()
+        {
+            return new SuccessDataResult<List<EmployeeFamilyDto>>(_employeeFamilyDal.GetEmployeeFamilies());
         }
 
         public IDataResult<EmployeeFamily> GetEmployeeFamily(int id)

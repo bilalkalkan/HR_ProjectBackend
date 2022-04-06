@@ -7,6 +7,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -19,9 +20,9 @@ namespace Business.Concrete
             _employeeComputerInformationDal = employeeComputerInformationDal;
         }
 
-        public IDataResult<List<EmployeeComputerInformation>> GetEmployeeComputerInformations()
+        public IDataResult<List<EmployeeComputerInformationDto>> GetEmployeeComputerInformations()
         {
-            return new SuccessDataResult<List<EmployeeComputerInformation>>(_employeeComputerInformationDal.GetAll());
+            return new SuccessDataResult<List<EmployeeComputerInformationDto>>(_employeeComputerInformationDal.GetEmployeeComputerInformationList());
         }
 
         public IDataResult<EmployeeComputerInformation> GetEmployeeComputerInformation(int id)
