@@ -7,6 +7,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -19,9 +20,9 @@ namespace Business.Concrete
             _employeeVacationDal = employeeVacationDal;
         }
 
-        public IDataResult<List<EmployeeVacation>> GetEmployeeVacations()
+        public IDataResult<List<EmployeeVacationDto>> GetEmployeeVacations()
         {
-            return new SuccessDataResult<List<EmployeeVacation>>(_employeeVacationDal.GetAll());
+            return new SuccessDataResult<List<EmployeeVacationDto>>(_employeeVacationDal.GetEmployeeVacationList());
         }
 
         public IDataResult<EmployeeVacation> GetEmployeeVacation(int id)

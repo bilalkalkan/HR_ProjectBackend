@@ -2,9 +2,9 @@
 
 namespace Entities.Concrete
 {
-    public class FamilyMember : IEntity
+    public class TypeOfAward:IEntity
     {
         public int Id { get; set; }
-        public string Member { get; set; }
+        public string AwardName { get; set; }
     }
 }

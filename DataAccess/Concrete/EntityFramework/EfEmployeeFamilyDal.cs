@@ -17,13 +17,14 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var result = from employeeFamily in context.EmployeeFamilies
                     join employee in context.Employees on employeeFamily.EmployeeId equals employee.Id
+                    join familyMember in context.FamilyMembers on employeeFamily.DegreeId equals familyMember.Id 
                     select new EmployeeFamilyDto
                     {
                         Id = employeeFamily.Id,
                         EmployeeId = employee.Id,
                         EmployeeFirstName = employee.FirstName,
                         EmployeeLastName = employee.LastName,
-                        Degree = employeeFamily.Degree,
+                        DegreeName = familyMember.Member,
                         FirstName = employeeFamily.FirstName,
                         LastName = employeeFamily.LastName,
                         Gender = employeeFamily.Gender,

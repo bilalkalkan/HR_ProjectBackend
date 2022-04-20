@@ -17,6 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var result = from employeeAwardInformation in context.EmployeeAwardInformations
                     join employee in context.Employees on employeeAwardInformation.EmployeeId equals employee.Id
+                    join typeOfAward in context.TypesOfAwards on employeeAwardInformation.AwardTypeId equals typeOfAward.Id 
                     select new EmployeeAwardInformationDto
                     {
                         Id = employeeAwardInformation.Id,
@@ -24,10 +25,11 @@ namespace DataAccess.Concrete.EntityFramework
                         EmployeeFirstName = employee.FirstName,
                         EmployeeLastName = employee.LastName,
                         AwardDate = employeeAwardInformation.AwardDate,
-                        AwardType = employeeAwardInformation.AwardType,
+                        AwardTypeId = employeeAwardInformation.AwardTypeId,
                         ReasonForAward = employeeAwardInformation.ReasonForAward,
                         CostOfThePrize = employeeAwardInformation.CostOfThePrize,
-                        AwardDescription = employeeAwardInformation.AwardDescription
+                        AwardDescription = employeeAwardInformation.AwardDescription,
+                        AwardTypeName = typeOfAward.AwardName
                     };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }

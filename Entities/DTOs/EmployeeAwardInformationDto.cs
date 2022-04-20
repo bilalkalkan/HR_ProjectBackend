@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Core.Entities;
 
 namespace Entities.DTOs
@@ -12,7 +10,8 @@ namespace Entities.DTOs
         public string EmployeeFirstName { get; set; }
         public string EmployeeLastName { get; set; }
         public DateTime AwardDate { get; set; }
-        public string AwardType { get; set; }
+        public int AwardTypeId { get; set; }
+        public string AwardTypeName { get; set; }
         public string ReasonForAward { get; set; }
         public string CostOfThePrize { get; set; }
         public string AwardDescription { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Entities.Concrete;
 
 namespace Business.Constants
 {
@@ -78,5 +79,6 @@ namespace Business.Constants
         public static string EmployeeAwardInformationDeleted = "Çalışanın ödül bilgileri silindi";
         public static string EmployeeAwardInformationUpdated = "Çalışanın ödül bilgileri güncellendi";
 
+        public static string NotFound = "Aradığınız kriterlere sahip çalışan bulunamadı";
     }
 }

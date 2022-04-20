@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
@@ -8,6 +6,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -20,9 +19,9 @@ namespace Business.Concrete
             _employeePastWorkExperienceDal = employeePastWorkExperienceDal;
         }
 
-        public IDataResult<List<EmployeePastWorkExperience>> GetEmployeePastWorkExperiences()
+        public IDataResult<List<EmployeePastWorkExperienceDto>> GetEmployeePastWorkExperiences()
         {
-            return new SuccessDataResult<List<EmployeePastWorkExperience>>(_employeePastWorkExperienceDal.GetAll());
+            return new SuccessDataResult<List<EmployeePastWorkExperienceDto>>(_employeePastWorkExperienceDal.GetEmployeePastWorkExperienceList());
         }
 
         public IDataResult<EmployeePastWorkExperience> GetEmployeePastWorkExperience(int id)

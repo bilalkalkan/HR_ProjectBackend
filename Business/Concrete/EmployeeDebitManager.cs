@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
@@ -7,6 +6,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -19,9 +19,9 @@ namespace Business.Concrete
             _employeeDebitDal = employeeDebitDal;
         }
 
-        public IDataResult<List<EmployeeDebit>> GetEmployeeDebits()
+        public IDataResult<List<EmployeeDebitDto>> GetEmployeeDebits()
         {
-            return new SuccessDataResult<List<EmployeeDebit>>(_employeeDebitDal.GetAll());
+            return new SuccessDataResult<List<EmployeeDebitDto>>(_employeeDebitDal.GetEmployeeDebitList());
         }
 
         public IDataResult<EmployeeDebit> GetEmployeeDebit(int id)

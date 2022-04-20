@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Text.Json.Serialization;
 using Core.Entities;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Employee : IEntity
+    public class EmployeeDto:IDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -12,12 +11,10 @@ namespace Entities.Concrete
         public string IdentificationNumber { get; set; }
         public string Gender { get; set; }
         public int NationalityId { get; set; }
+        public string NationalityName { get; set; }
         public string PlaceOfBirth { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string MaritalStatus { get; set; }
-
-
-
         public string RegistrationNumber { get; set; }
         public DateTime CompanyEntryDate { get; set; }
         public DateTime SGKEntryDate { get; set; }
@@ -26,8 +23,6 @@ namespace Entities.Concrete
         public DateTime SeverancePayStartDate { get; set; }
         public DateTime OYAKStartDateOfWork { get; set; }
         public DateTime FirstDateOfJoiningTheGroup { get; set; }
-
-
         public decimal Wage { get; set; }
         public string TypeOfWage { get; set; }
         public string TypeOfPayment { get; set; }

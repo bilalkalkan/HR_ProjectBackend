@@ -17,13 +17,14 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var result = from employeeLanguage in context.EmployeeLanguages
                              join employee in context.Employees on employeeLanguage.EmployeeId equals employee.Id
+                             join language in context.Languages on employeeLanguage.ForeignLanguageId equals language.Id
                              select new EmployeeLanguageDto
                              {
                                  Id = employeeLanguage.Id,
                                  EmployeeId = employee.Id,
                                  EmployeeFirstName = employee.FirstName,
                                  EmployeeLastName = employee.LastName,
-                                 ForeignLanguage = employeeLanguage.ForeignLanguage,
+                                 ForeignLanguageName = language.NameOfLanguage,
                                  Reading = employeeLanguage.Reading,
                                  Writing = employeeLanguage.Writing,
                                  Talking = employeeLanguage.Talking

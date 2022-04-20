@@ -1,7 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Abstract.Items;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -23,6 +22,18 @@ namespace WebAPI.Controllers
         public IActionResult GetAll()
         {
             var result = _employeeService.GetEmployees();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getallbyfilter")]
+        public IActionResult GetAllByFilter(string gender, string nationality, string identificationNumber)
+        {
+            var result = _employeeService.GetAllByFilter(gender, nationality, identificationNumber);
             if (result.Success)
             {
                 return Ok(result);

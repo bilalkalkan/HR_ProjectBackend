@@ -28,6 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Nationality> Nationalities { get; set; }
         public DbSet<DebitType> DebitTypes { get; set; }
         public DbSet<AllowanceType> AllowanceTypes { get; set; }
+        public DbSet<TypeOfAward> TypesOfAwards { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<County> Counties { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }

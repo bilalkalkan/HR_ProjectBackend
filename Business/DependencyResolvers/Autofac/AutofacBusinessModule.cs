@@ -84,6 +84,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<NationalityManager>().As<INationalityService>().SingleInstance();
             builder.RegisterType<EfNationalityDal>().As<INationalityDal>().SingleInstance();
 
+            builder.RegisterType<TypeOfAwardManager>().As<ITypeOfAwardService>().SingleInstance();
+            builder.RegisterType<EfTypeOfAwardDal>().As<ITypeOfAwardDal>().SingleInstance();
+
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
 

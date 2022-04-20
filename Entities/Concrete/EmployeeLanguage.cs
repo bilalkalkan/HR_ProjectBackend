@@ -6,7 +6,7 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }
-        public string ForeignLanguage { get; set; }
+        public int ForeignLanguageId { get; set; }
         public string Reading { get; set; }
         public string Writing { get; set; }
         public string Talking { get; set; }

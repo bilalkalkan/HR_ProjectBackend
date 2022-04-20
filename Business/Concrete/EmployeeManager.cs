@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -18,9 +20,31 @@ namespace Business.Concrete
             _employeeDal = employeeDal;
         }
 
-        public IDataResult<List<Employee>> GetEmployees()
+        public IDataResult<List<EmployeeDto>> GetEmployees()
         {
-            return new SuccessDataResult<List<Employee>>(_employeeDal.GetAll());
+            return new SuccessDataResult<List<EmployeeDto>>(_employeeDal.GetEmployeeList());
+        }
+
+        public IDataResult<List<EmployeeDto>> GetAllByFilter(string gender, string nationalityName, string identificationNumber)
+        {
+            
+            var result = _employeeDal.GetEmployeeList();
+
+            if (gender != null)
+            {
+                result = result.Where(e => e.Gender == gender).ToList();
+            }
+            if (nationalityName != null)
+            {
+                result = result.Where(e => e.NationalityName == nationalityName).ToList();
+            }
+            if (identificationNumber != null)
+            {
+                result = result.Where(e => e.IdentificationNumber == identificationNumber).ToList();
+            }
+            return new SuccessDataResult<List<EmployeeDto>>(result);
+
+
         }
 
         public IDataResult<Employee> GetEmployee(int id)
